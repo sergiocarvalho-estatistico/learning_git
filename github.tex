@@ -1,0 +1,322 @@
+\documentclass[]{tufte-handout}
+
+% ams
+\usepackage{amssymb,amsmath}
+
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \makeatletter
+  \@ifpackageloaded{fontspec}{}{\usepackage{fontspec}}
+  \makeatother
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+  \makeatletter
+  \@ifpackageloaded{soul}{
+     \renewcommand\allcapsspacing[1]{{\addfontfeature{LetterSpace=15}#1}}
+     \renewcommand\smallcapsspacing[1]{{\addfontfeature{LetterSpace=10}#1}}
+   }{}
+  \makeatother
+
+\fi
+
+% graphix
+\usepackage{graphicx}
+\setkeys{Gin}{width=\linewidth,totalheight=\textheight,keepaspectratio}
+
+% booktabs
+\usepackage{booktabs}
+
+% url
+\usepackage{url}
+
+% hyperref
+\usepackage{hyperref}
+
+% units.
+\usepackage{units}
+
+
+\setcounter{secnumdepth}{-1}
+
+% citations
+
+% pandoc syntax highlighting
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\newenvironment{Shaded}{}{}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.56,0.13,0.00}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{#1}}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{#1}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.53,0.00,0.00}{#1}}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.73,0.40,0.53}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textit{#1}}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.73,0.13,0.13}{\textit{#1}}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.02,0.16,0.49}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.10,0.09,0.49}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{#1}}}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.40,0.40,0.40}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.74,0.48,0.00}{#1}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.49,0.56,0.16}{#1}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+
+% longtable
+
+% multiplecol
+\usepackage{multicol}
+
+% strikeout
+\usepackage[normalem]{ulem}
+
+% morefloats
+\usepackage{morefloats}
+
+
+% tightlist macro required by pandoc >= 1.14
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+% title / author / date
+\title{Git e Github}
+\author{Sérgio Carvalho}
+\date{15 outubro, 2018}
+
+
+\begin{document}
+
+\maketitle
+
+
+
+
+================================================================================
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# "cerulean", "journal", "flatly", "readable", "spacelab", }
+\CommentTok{# "united", "cosmo", "lumen", "paper", "sandstone", "simplex", "yeti"}
+
+\CommentTok{# readable,}
+
+    \CommentTok{# html_document:}
+    \CommentTok{# theme: sandstone}
+    \CommentTok{# highlight: zenburn }
+    \CommentTok{# code_folding: hide}
+    \CommentTok{# after_body: doc_suffix.html}
+    \CommentTok{# before_body: doc_prefix.html}
+    \CommentTok{# fig_caption: yes}
+    \CommentTok{# fig_height: 4}
+    \CommentTok{# fig_width: 10}
+    \CommentTok{# df_print: paged}
+    \CommentTok{# number_sections: yes}
+    \CommentTok{# toc: yes}
+    \CommentTok{# toc_float:}
+    \CommentTok{#   collapsed: yes}
+    \CommentTok{#   smooth_scroll: yes}
+\end{Highlighting}
+\end{Shaded}
+
+\section{O que é o Git e o Github ?}\label{o-que-e-o-git-e-o-github}
+
+\subsection{O Git}\label{o-git}
+
+\begin{itemize}
+\item
+  É um sistema de controle de versão distribuído gratuito e de código
+  aberto projetado para lidar com tudo, de projetos pequenos a muito
+  grandes, com velocidade e eficiência, além de ser fácil de aprender
+  Ele usa recursos como ramificação local barata, áreas de preparação
+  convenientes e vários fluxos de trabalho.
+\item
+  Interessante: A microsoft migrou o seu sistema de controle de versão
+  interna para o Git com o Github, pois pra o windows há cerca de 4 mil
+  desenvolvedores em todo mundo e o controle de versão da microsoft não
+  estava dando conta.
+\end{itemize}
+
+\subsection{O Github}\label{o-github}
+
+\begin{itemize}
+\tightlist
+\item
+  É um conjunto de repositórios publicados no Git e na internet, ou
+  seja, além de o usuário poder fazer o controle de versão na máquina
+  com o GitHub ele também pode fazer esse controle de versão online em
+  um único repositório protegido por usuário e senha, isso é o Github,
+  ou seja, é um local na internet onde estão os diversos repositórios do
+  Git em todo mundo.
+\end{itemize}
+
+\section{Aprenda git em:}\label{aprenda-git-em}
+
+\begin{itemize}
+\tightlist
+\item
+  (GitHub, n.d.)
+\item
+  (Udemy, n.d.)
+\item
+  (GitBranching, n.d.)
+\item
+  (GitLab, n.d.)
+\item
+  (Git-try-io, n.d.)
+\end{itemize}
+
+\section{Configure a ferramenta}\label{configure-a-ferramenta}
+
+Configure informações de usuário para todos os repositórios locais, como
+o nome e o email que você quer ligado às suas transações de commit.
+
+\begin{itemize}
+\item
+  \$ git config --global user.name ``{[}nome{]}''
+\item
+  \$ git config --global user.email ``{[}endereco-de-email{]}''
+\end{itemize}
+
+\section{Crie um repositório ou obtenha de uma URL
+existente}\label{crie-um-repositorio-ou-obtenha-de-uma-url-existente}
+
+\begin{itemize}
+\item
+  \$ git init {[}nome-do-projeto{]}
+\item
+  \$ git clone {[}url{]}
+\end{itemize}
+
+\section{Mude e remova os arquivos
+versionados}\label{mude-e-remova-os-arquivos-versionados}
+
+Remove o arquivo do diretório de trabalho e o prepara a remoção
+
+\begin{itemize}
+\tightlist
+\item
+  \$ git rm {[}arquivo{]}
+\end{itemize}
+
+Remove o arquivo do controle de versão mas preserva o arquivo localmente
+
+\begin{itemize}
+\tightlist
+\item
+  \$ git rm --cached {[}arquivo{]}
+\end{itemize}
+
+Muda o nome do arquivo e o prepara para o commit
+
+\begin{itemize}
+\tightlist
+\item
+  \$ git mv {[}arquivo-original{]} {[}arquivo-renomeado{]}
+\end{itemize}
+
+\section{Suprima o monitoramento}\label{suprima-o-monitoramento}
+
+Ignore arquivos e diretórios temporários
+
+\begin{itemize}
+\tightlist
+\item
+  *.log
+\item
+  build/
+\item
+  temp-*
+\end{itemize}
+
+Um arquivo de texto chamado .gitignore suprime o versionamento acidental
+de arquivos e diretórios correspondentes aos padrões especificados
+
+\begin{itemize}
+\tightlist
+\item
+  \$ git ls-files --others --ignored --exclude-standard
+\end{itemize}
+
+Lista todos os arquivos ignorados neste projeto
+
+\section{Salve fragmentos}\label{salve-fragmentos}
+
+Arquive e restaure mudanças incompletas.
+
+Armazena temporariamente todos os arquivos monitorados modificados
+
+\begin{itemize}
+\tightlist
+\item
+  \$ git stash
+\end{itemize}
+
+Restaura os arquivos recentes em stash
+
+\begin{itemize}
+\tightlist
+\item
+  \$ git stash pop
+\end{itemize}
+
+Lista todos os conjuntos de alterações em stash
+
+\begin{itemize}
+\tightlist
+\item
+  \$ git stash list
+\end{itemize}
+
+Descarta os conjuntos de alterações mais recentes em stash
+
+\begin{itemize}
+\tightlist
+\item
+  \$ git stash drop
+\end{itemize}
+
+\section*{Referências}\label{referencias}
+\addcontentsline{toc}{section}{Referências}
+
+\hypertarget{refs}{}
+\hypertarget{ref-Gittryio}{}
+Git-try-io, Team. n.d. ``Git-Try-Io:'' \url{http://try.github.io/}.
+
+\hypertarget{ref-GitBranching}{}
+GitBranching, Team. n.d. ``GitBranching:''
+\url{https://learngitbranching.js.org/}.
+
+\hypertarget{ref-Gitbook}{}
+GitHub, Team. n.d. ``Gitbook:'' \url{https://git-scm.com/book/en/v2}.
+
+\hypertarget{ref-GitLab}{}
+GitLab, Team. n.d. ``GitLab:'' \url{https://lab.github.com/courses}.
+
+\hypertarget{ref-UdemyGit}{}
+Udemy, Team. n.d. ``UdemyGit:''
+\url{https://www.udemy.com/git-e-github-para-iniciantes/}.
+
+
+
+\end{document}
